@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_app_ui/screen/login_screen.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -40,20 +41,25 @@ class WelcomePage extends StatelessWidget {
                     fontSize: 14),
               ),
               const SizedBox(height: 20,),
-              Container(
-                width: size.width * 0.8,
-                height: 45,
-                decoration: BoxDecoration(
-                    color: Colors.purple,
-                    borderRadius: BorderRadius.circular(12)),
-                child: const Center(
-                    child: Text(
-                  "Start Learning ",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
-                )),
+              InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen(),));
+                },
+                child: Container(
+                  width: size.width * 0.8,
+                  height: 45,
+                  decoration: BoxDecoration(
+                      color: Colors.purple,
+                      borderRadius: BorderRadius.circular(12)),
+                  child: const Center(
+                      child: Text(
+                    "Start Learning ",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  )),
+                ),
               )
             ],
           ),
