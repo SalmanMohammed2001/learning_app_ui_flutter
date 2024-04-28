@@ -1,7 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:learning_app_ui/models/class_model.dart';
 
-class MyClass extends StatelessWidget {
+class MyClass extends StatefulWidget {
   const MyClass({super.key});
+
+  @override
+  State<MyClass> createState() => _MyClassState();
+}
+
+class _MyClassState extends State<MyClass> {
+  List<ClassModel> classes = [
+    ClassModel(
+      image:
+          "https://ww2.kqed.org/app/uploads/sites/23/2022/11/BRO-Vector-iStock-1920x1280.jpg",
+      name: "Math",
+      studentCount: 200,
+    ),
+    ClassModel(
+      image:
+          "https://ww2.kqed.org/app/uploads/sites/23/2022/11/BRO-Vector-iStock-1920x1280.jpg",
+      name: "Math",
+      studentCount: 200,
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
