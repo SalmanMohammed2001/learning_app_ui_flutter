@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(children: [
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             const Text(
               "Learning App",
               style: TextStyle(
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 SocialButton(
                   size: size,
-                  color: Colors.blue,
+                  color: const Color.fromARGB(255, 24, 72, 206),
                   name: "Facebook",
                   iconData: FontAwesomeIcons.facebook,
                 ),
@@ -56,8 +56,55 @@ class LoginScreen extends StatelessWidget {
                   size: size,
                   color: const Color.fromARGB(255, 180, 40, 30),
                   name: "Google",
-                  iconData: FontAwesomeIcons.google,
+                  iconData: FontAwesomeIcons.googlePlus,
                 ),
+              ],
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Column(
+              children: [
+                TextField(
+                    decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  label: const Text("Email "),
+                )),
+                const SizedBox(
+                  height: 15,
+                ),
+                TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      label: const Text("Password"),
+                    ))
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Checkbox(
+                  value: false,
+                  onChanged: (value) {},
+                ),
+                const Text(
+                  "Rember Me",
+                  style: TextStyle(color: Colors.purple),
+                ),
+                const Spacer(),
+                const Text(
+                  "Forgot Password",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
               ],
             )
           ]),
