@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -6,8 +5,20 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.cyan,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Login",
+          style: TextStyle(color: Colors.purple, fontSize: 18),
+        ),
+        centerTitle: true,
+        leading: const Icon(
+          Icons.arrow_back_ios_rounded,
+          color: Colors.purple,
+        ),
+      ),
+      backgroundColor: Colors.white,
     );
   }
 }
