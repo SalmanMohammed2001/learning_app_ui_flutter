@@ -34,15 +34,15 @@ class LoginScreen extends StatelessWidget {
                   fontWeight: FontWeight.w700),
             ),
             const SizedBox(
-              height: 10,
+              height: 50,
             ),
             const Text(
               "Enter your login Details to access your account",
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.purple, fontSize: 18, height: 0.9),
+              style: TextStyle(color: Colors.purple, fontSize: 23, height: 0.9),
             ),
             const SizedBox(
-              height: 25,
+              height: 40,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 25,
+              height: 40,
             ),
             Column(
               children: [
@@ -117,7 +117,22 @@ class LoginScreen extends StatelessWidget {
               voidCallback: () {
                 print("hii");
               },
-            )
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            RichText(
+                text: const TextSpan(
+                    text: "Don't have an Account ?",
+                    style: TextStyle(color: Colors.purple, fontSize: 12),
+                    children: [
+                  TextSpan(
+                      text: "Create Account ",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ))
+                ]))
           ]),
         ),
       ),
