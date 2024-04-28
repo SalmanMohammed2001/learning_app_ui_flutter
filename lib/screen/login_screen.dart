@@ -43,7 +43,23 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            SocialButton(size: size)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SocialButton(
+                  size: size,
+                  color: Colors.blue,
+                  name: "Facebook",
+                  iconData: FontAwesomeIcons.facebook,
+                ),
+                SocialButton(
+                  size: size,
+                  color: const Color.fromARGB(255, 180, 40, 30),
+                  name: "Google",
+                  iconData: FontAwesomeIcons.google,
+                ),
+              ],
+            )
           ]),
         ),
       ),
@@ -55,38 +71,40 @@ class SocialButton extends StatelessWidget {
   const SocialButton({
     super.key,
     required this.size,
+    required this.name,
+    required this.color,
+    required this.iconData,
   });
 
   final Size size;
+  final Color color;
+  final String name;
+  final IconData iconData;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: size.width * 0.4,
-          height: 50,
-          decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(15)),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                FontAwesomeIcons.facebook,
-                color: Colors.white,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                "Facebook",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-              )
-            ],
+    return Container(
+      width: size.width * 0.4,
+      height: 50,
+      decoration:
+          BoxDecoration(color: color, borderRadius: BorderRadius.circular(15)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            iconData,
+            color: Colors.white,
           ),
-        ),
-      ],
+          const SizedBox(
+            width: 10,
+          ),
+          Text(
+            name,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w600),
+          )
+        ],
+      ),
     );
   }
 }
