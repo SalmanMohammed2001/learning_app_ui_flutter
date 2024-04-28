@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:learning_app_ui/components/custom_button.dart';
+import 'package:learning_app_ui/screen/my_classes.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -115,7 +116,11 @@ class LoginScreen extends StatelessWidget {
               size: size,
               text: "Login with your account",
               voidCallback: () {
-                print("hii");
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyClass(),
+                    ));
               },
             ),
             const SizedBox(
