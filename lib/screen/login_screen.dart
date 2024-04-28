@@ -111,7 +111,13 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            CustomButton(size: size, text: "Login with your account")
+            CustomButton(
+              size: size,
+              text: "Login with your account",
+              voidCallback: () {
+                print("hii");
+              },
+            )
           ]),
         ),
       ),

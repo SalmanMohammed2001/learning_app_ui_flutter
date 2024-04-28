@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:learning_app_ui/screen/login_screen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.size,
     required this.text,
+    required this.voidCallback,
   });
 
   final Size size;
   final String text;
+  final VoidCallback voidCallback;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const LoginScreen(),
-            ));
-      },
+      onTap: voidCallback,
       child: Container(
         width: size.width * 0.8,
         height: 45,

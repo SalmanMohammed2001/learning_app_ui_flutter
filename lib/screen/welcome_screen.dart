@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_app_ui/components/custom_button.dart';
+import 'package:learning_app_ui/screen/login_screen.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -46,6 +47,13 @@ class WelcomePage extends StatelessWidget {
               CustomButton(
                 size: size,
                 text: "Start Learning",
+                voidCallback: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ));
+                },
               )
             ],
           ),
