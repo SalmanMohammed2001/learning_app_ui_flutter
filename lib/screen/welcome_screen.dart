@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_app_ui/screen/login_screen.dart';
+import 'package:learning_app_ui/components/custom_button.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -40,26 +40,12 @@ class WelcomePage extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                     fontSize: 14),
               ),
-              const SizedBox(height: 20,),
-              InkWell(
-                onTap: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen(),));
-                },
-                child: Container(
-                  width: size.width * 0.8,
-                  height: 45,
-                  decoration: BoxDecoration(
-                      color: Colors.purple,
-                      borderRadius: BorderRadius.circular(12)),
-                  child: const Center(
-                      child: Text(
-                    "Start Learning ",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  )),
-                ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomButton(
+                size: size,
+                text: "Start Learning",
               )
             ],
           ),

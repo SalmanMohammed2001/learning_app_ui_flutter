@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:learning_app_ui/components/custom_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -106,7 +107,11 @@ class LoginScreen extends StatelessWidget {
                   ),
                 )
               ],
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            CustomButton(size: size, text: "Login with your account")
           ]),
         ),
       ),
